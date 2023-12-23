@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "njpwerner.autodocstring",
+    "mohammadbaqer.better-folding",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "igorsbitnev.error-gutters",
+    "saikou9901.evilinspector",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "oderwat.indent-rainbow",
+    "visualstudioexptteam.vscodeintellicode",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "ms-python.isort",
+    "christian-kohler.path-intellisense",
+    "gruntfuggly.todo-tree",
+    "shardulm94.trailing-spaces"
+  ]
+}
