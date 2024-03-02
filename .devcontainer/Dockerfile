@@ -7,9 +7,11 @@ USER root
 RUN apt-get update -y \
   && DEBIAN_FRONTEND=noninteractive \
   apt-get install -y --no-install-recommends \
-  git \
   locales \
   tzdata \
+  git \
+  ca-certificates \
+  openssh-client \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
