@@ -1,13 +1,29 @@
+from typing import Any, Callable, TypeVar, cast, Optional
+import functools
 import time
 
+F = TypeVar("F", bound=Callable[..., Any])
 
-def timer(func):
-    def wrapper(*args, **kwargs):
-        start = time.time()
+
+def timer(
+    func: Optional[F] = None,
+    /,
+    *,
+    callback: Optional[F] = None,
+) -> Callable[..., Any]:
+    if func is None:
+        return functools.partial(timer, callback=callback)
+
+    @functools.wraps(func)
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
+        start_time = time.perf_counter()
         result = func(*args, **kwargs)
-        end = time.time()
-        time_taken_ms = (end - start) * 1000
-        print(f"Time taken: {time_taken_ms} (ms)")
+        end_time = time.perf_counter()
+        elapsed_time_ms = (end_time - start_time) * 1000.0
+        if callback:
+            callback(elapsed_time_ms)
+        else:
+            print(f"Time taken by {func.__name__}: {elapsed_time_ms} ms")
         return result
 
-    return wrapper
+    return cast(F, wrapper)
