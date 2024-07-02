@@ -12,6 +12,8 @@ RUN apt-get update -y \
   git \
   ca-certificates \
   openssh-client \
+  fontconfig \
+  fonts-noto-cjk \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
