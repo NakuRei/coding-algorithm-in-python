@@ -1,5 +1,5 @@
 {
-  "name": "coding-sorts-in-python",
+  "name": "coding-algorithm-in-python",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
