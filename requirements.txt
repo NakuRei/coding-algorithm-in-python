@@ -2,3 +2,7 @@ flake8
 black
 
 numpy
+ipykernel
+matplotlib
+pandas
+scikit-learn
